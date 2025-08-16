@@ -1,0 +1,4 @@
+how to venv
+
+create :PS python -m venv CareerAI.venv
+Activate: .\CareerAI.venv\Scripts\activate 
