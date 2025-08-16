@@ -1,0 +1,17 @@
+** พี่ฟังก่อน!!! **
+Lib :
+    1. pyttsx3
+    2. SpeechRecognition
+    3. pyaudio
+    4. sounddevice
+    5. numpy
+วิธีติดตั้ง เข้าไปที่ไฟล์ requirements.txt แล้วใช้คำสั่ง pip install -r requirements.txt
+ไฟล์ setup.sh เป็นการให้สิทธิ์เข้าถึง ใช้คำสั่ง chmod +x setup.sh
+
+stt_module.py แปลงเสียงเป็นข้อความ
+ai_module.py ประมวลข้อความที่ได้มา และสร้างเป็นข้อความตอบ
+tts_module.py เป็นส่วนที่ให้ แปลงจากข้อความเป็นเสียง
+memory.py จะใช้เป็นตัวเก็บประวัติการคุย มันจะสร้างไฟล์ Json ไว้เก็บข้อมูลการคุย
+main.py เป็นตัวรันโปรเจ็คน่าจะใช้ python3 main.py 
+
+## น่าจะใช้ Python 3.13.5 หรือ 3.11. ซักอันนึง เพราะมันมีโมเดลที่มันไม่รองรับเวอร์ชันใหม่ ##
