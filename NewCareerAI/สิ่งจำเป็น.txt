@@ -1,3 +1,0 @@
-สิ่งจำเป็น
-1.google gemini api
-2.Google Cloud TTS client Service Account Key เพื่อใช้ model เสียง TextToSpeech
