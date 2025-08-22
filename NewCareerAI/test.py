@@ -6,13 +6,21 @@ from STTmodule import record_voice, transcribe_voice
 
 
 # ------------------- ตั้งค่า TTS -------------------
-json_path = r"D:\NewCareerAI\careerai-469309-9946c52b3f8e.json"
+json_path = os.environ.get("GOOGLE_APPLICATION_CREDENTIALS", "careerai-469309-9946c52b3f8e.json")
+if not os.path.exists(json_path):
+    print(f"❌ ไม่พบไฟล์ Google Cloud credentials: {json_path}")
+    print("กรุณาตั้งค่า environment variable GOOGLE_APPLICATION_CREDENTIALS")
+    exit(1)
 tts_client = create_tts_client(json_path)
 
 
 # ------------------- ตั้งค่า Gemini -------------------
-os.environ["API_KEY"] = "AIzaSyARJ3Uwv43vqefMpzqyFofVd3GXVyQxA3I"
-genai.configure(api_key=os.environ["API_KEY"])
+api_key = os.environ.get("GEMINI_API_KEY")
+if not api_key:
+    print("❌ ไม่พบ GEMINI_API_KEY environment variable")
+    print("กรุณาตั้งค่า environment variable GEMINI_API_KEY")
+    exit(1)
+genai.configure(api_key=api_key)
 
 
 # ------------------- กรอก JD -------------------

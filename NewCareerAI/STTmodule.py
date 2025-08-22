@@ -10,8 +10,8 @@ CHUNK = 1024
 SILENCE_THRESHOLD = 500
 SILENCE_DURATION = 5  # วินาทีที่ถือว่าเงียบ -> หยุดบันทึก
 
-# โหลดโมเดล Whisper
-whisper_model = whisper.load_model("large")
+# โหลดโมเดล Whisper (ใช้ base แทน large เพื่อประหยัดหน่วยความจำ)
+whisper_model = whisper.load_model("base")
 
 
 def record_voice(filename="recorded.wav"):

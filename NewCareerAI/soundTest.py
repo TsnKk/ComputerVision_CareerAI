@@ -1,14 +1,19 @@
 from google.cloud import texttospeech
 from playsound import playsound
+import os
 
 # สร้าง client จากไฟล์ JSON ของ Service Account
-json_path = "D:\\NewCareerAI\\careerai-469309-9946c52b3f8e.json"
-tts_client = texttospeech.TextToSpeechClient.from_service_account_file(
-    json_path)
+json_path = os.environ.get("GOOGLE_APPLICATION_CREDENTIALS", "careerai-469309-9946c52b3f8e.json")
+if not os.path.exists(json_path):
+    print(f"❌ ไม่พบไฟล์ Google Cloud credentials: {json_path}")
+    print("กรุณาตั้งค่า environment variable GOOGLE_APPLICATION_CREDENTIALS")
+    exit(1)
+
+tts_client = texttospeech.TextToSpeechClient.from_service_account_file(json_path)
 
 # ข้อความตัวอย่าง
 text_input = texttospeech.SynthesisInput(
-    text="ไอเหนือเป็นเปโด ไอเกมก็ชอบเด็ก แต่ความจริงไอแซนเป็นคนกัมพุชา แต่มันไม่ยอมรัpip install pydub simpleaudioบ")
+    text="สวัสดีครับ นี่คือการทดสอบระบบ Text-to-Speech ของ Google Cloud")
 
 # เลือกเสียงและภาษาที่ต้องการ
 voice = texttospeech.VoiceSelectionParams(

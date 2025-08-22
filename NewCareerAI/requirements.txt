@@ -1,8 +1,6 @@
 google-generativeai
-pyttsx3
 google-cloud-texttospeech
-pydub
-playsound
+playsound==1.2.2
 sounddevice
 numpy
 scipy
