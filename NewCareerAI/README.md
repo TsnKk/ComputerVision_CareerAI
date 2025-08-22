@@ -1,78 +1,54 @@
-# NewCareerAI - ระบบสัมภาษณ์งานอัตโนมัติ
+# NewCareerAI - Advanced Interview System
 
-ระบบสัมภาษณ์งานที่ใช้ AI สร้างคำถามจาก Job Description, อ่านคำถามด้วยเสียง, และบันทึก-ถอดเสียงคำตอบ
+## 📁 โครงสร้างโฟลเดอร์
 
-## 🔧 การติดตั้ง
+### 📂 core/
+ไฟล์หลักของระบบสัมภาษณ์งาน
+- `interview_system.py` - ระบบสัมภาษณ์งานครบวงจร (AI + TTS + STT)
 
-### 1. สร้าง Virtual Environment
-```powershell
-cd NewCareerAI
-python -m venv venv
-.\venv\Scripts\Activate.ps1
-```
+### 📂 modules/
+โมดูลประมวลผลแยกตามหน้าที่
+- `STTmodule.py` - ระบบ Speech-to-Text ด้วย Whisper (อัดเสียงอัตโนมัติ)
+- `TTSmodule.py` - ระบบ Text-to-Speech ด้วย Google Cloud TTS
 
-### 2. ติดตั้งไลบรารี
-```powershell
-pip install -r requirements.txt
-```
+### 📂 examples/
+ตัวอย่างการใช้งานและทดสอบ
+- `google_tts_test.py` - ทดสอบ Google Cloud TTS
 
-### 3. ตั้งค่า Environment Variables
+### 📂 docs/
+เอกสารและคำแนะนำ
+- `requirements_note.txt` - รายการสิ่งที่จำเป็น (API Keys)
+- `google_tts_notes.txt` - บันทึกเกี่ยวกับ Google TTS
 
-สร้างไฟล์ `.env` จากตัวอย่าง:
-```powershell
-copy .env.example .env
-```
+## 🎯 ความสามารถหลัก
 
-แก้ไขไฟล์ `.env`:
-```
-GOOGLE_APPLICATION_CREDENTIALS=path/to/your/service-account-key.json
-GEMINI_API_KEY=your_gemini_api_key_here
-```
-
-**หรือ** ตั้งค่าใน PowerShell:
-```powershell
-$env:GOOGLE_APPLICATION_CREDENTIALS="path\to\your\service-account-key.json"
-$env:GEMINI_API_KEY="your_gemini_api_key_here"
-```
-
-## 📁 ไฟล์หลัก
-
-- `test.py` - ระบบสัมภาษณ์หลัก
-- `TTSmodule.py` - Text-to-Speech (Google Cloud TTS + pygame)
-- `STTmodule.py` - Speech-to-Text (Whisper + sounddevice)
-- `soundTest.py` - ทดสอบ Google TTS
+- **AI-Powered Interviews**: ใช้ Google Gemini สร้างคำถามจาก JD
+- **Premium Voice**: Google Cloud TTS เสียงไทยคุณภาพสูง
+- **Smart Recording**: อัดเสียงอัตโนมัติด้วย Whisper
+- **Complete Workflow**: JD → คำถาม → สัมภาษณ์ → บันทึกคำตอบ
 
 ## 🚀 การใช้งาน
 
-```powershell
-python test.py
+1. ตั้งค่า Environment Variables:
+```bash
+set GEMINI_API_KEY=your_gemini_api_key
+set GOOGLE_APPLICATION_CREDENTIALS=path_to_service_account.json
 ```
 
-1. กรอก Job Description
-2. ระบบจะสร้างคำถามด้วย Gemini AI
-3. อ่านคำถามด้วยเสียง (Google TTS)
-4. อัดเสียงคำตอบ (Whisper STT)
-5. แสดงผลคำตอบทั้งหมด
+2. ติดตั้ง dependencies:
+```bash
+pip install -r requirements.txt
+```
 
-## 🔑 การขอ API Keys
+3. รันระบบสัมภาษณ์:
+```bash
+python core/interview_system.py
+```
 
-### Google Cloud Text-to-Speech
-1. ไป [Google Cloud Console](https://console.cloud.google.com/)
-2. สร้างโปรเจคใหม่
-3. เปิดใช้งาน Text-to-Speech API
-4. สร้าง Service Account และดาวน์โหลด JSON key
-5. ตั้งค่า `GOOGLE_APPLICATION_CREDENTIALS`
-
-### Gemini API
-1. ไป [Google AI Studio](https://aistudio.google.com/)
-2. สร้าง API key
-3. ตั้งค่า `GEMINI_API_KEY`
-
-## 📋 ไลบรารีที่ใช้
-
-- `google-generativeai` - Gemini AI
-- `google-cloud-texttospeech` - Google TTS
-- `openai-whisper` - Speech-to-Text
-- `sounddevice`, `numpy`, `scipy` - การบันทึกเสียง
-- `pygame` - เล่นไฟล์เสียง
-- `playsound` - เล่นไฟล์เสียง (สำรอง)
+## 📋 Dependencies
+- google-generativeai (Gemini)
+- google-cloud-texttospeech
+- whisper
+- sounddevice
+- scipy
+- pygame

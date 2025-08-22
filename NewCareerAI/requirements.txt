@@ -1,8 +1,31 @@
-google-generativeai
-google-cloud-texttospeech
-playsound==1.2.2
-sounddevice
-numpy
-scipy
-openai-whisper
-pygame
+# NewCareerAI - Advanced Interview System Requirements
+# ระบบสัมภาษณ์งานขั้นสูงด้วย AI
+
+# === Core Dependencies ===
+google-generativeai>=0.3.0
+google-cloud-texttospeech>=2.14.0
+
+# === Audio Processing ===
+openai-whisper>=20231117
+sounddevice>=0.4.6
+numpy>=1.24.0
+scipy>=1.11.0
+
+# === Audio Playback ===
+pygame>=2.5.0
+
+# === Optional: Alternative Audio Playback ===
+# playsound==1.2.2
+
+# === System Dependencies Notes ===
+# Windows ผู้ใช้อาจต้องติดตั้ง:
+# pip install pipwin
+# pipwin install pyaudio
+
+# macOS ผู้ใช้อาจต้องติดตั้ง:
+# brew install portaudio
+# pip install pyaudio
+
+# Linux ผู้ใช้อาจต้องติดตั้ง:
+# sudo apt-get install portaudio19-dev python3-pyaudio
+# pip install pyaudio

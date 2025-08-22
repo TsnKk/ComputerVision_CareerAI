@@ -1,0 +1,48 @@
+เสียง Google tts น่าใช้
+
+Voice
+th-TH-Chirp3-HD-Alnilam
+
+
+Voice
+th-TH-Chirp3-HD-Callirrhoe
+
+
+Voice
+th-TH-Chirp3-HD-Fenrir
+
+
+Voice
+th-TH-Chirp3-HD-Gacrux
+
+
+Voice
+th-TH-Chirp3-HD-Kore
+
+
+Voice
+th-TH-Chirp3-HD-Laomedeia
+
+
+Voice
+th-TH-Chirp3-HD-Pulcherrima
+
+
+Voice
+th-TH-Chirp3-HD-Schedar
+
+
+Voice
+th-TH-Chirp3-HD-Vindemiatrix
+
+
+google cloud wavenet
+Thai (Thailand)	Premium	th-TH	th-TH-Chirp3-HD-Despina
+
+Thai (Thailand)	Premium	th-TH	th-TH-Chirp3-HD-Erinome   -------------
+
+Thai (Thailand)	Premium	th-TH	th-TH-Chirp3-HD-Rasalgethi
+
+Thai (Thailand)	Premium	th-TH	th-TH-Chirp3-HD-Schedar
+
+Thai (Thailand)	Premium	th-TH	th-TH-Chirp3-HD-Sulafat   -------------
