@@ -1,11 +1,10 @@
-pip install google-generativeai
-pip install pyttsx3
-pip install google-cloud-texttospeech
-pip install pydub
-#pydub โหลด ffmpeg เพิ่ม
-pip install playsound
-pip install sounddevice
-pip install numpy
-pip install scipy
-pip install openai-whisper
-pip install pygame
+google-generativeai
+pyttsx3
+google-cloud-texttospeech
+pydub
+playsound
+sounddevice
+numpy
+scipy
+openai-whisper
+pygame
