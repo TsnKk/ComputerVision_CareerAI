@@ -14,6 +14,9 @@ scipy>=1.11.0
 # === Audio Playback ===
 pygame>=2.5.0
 
+# === Web Interface ===
+streamlit>=1.28.0
+
 # === Optional: Alternative Audio Playback ===
 # playsound==1.2.2
 
