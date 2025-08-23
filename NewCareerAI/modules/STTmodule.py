@@ -30,6 +30,8 @@ import sounddevice as sd
 import numpy as np
 from scipy.io.wavfile import write
 import whisper
+import streamlit as st
+import streamlit as st
 import queue
 import os
 import time
@@ -42,6 +44,7 @@ try:
 except ImportError:
     from config import audio_config, whisper_config, AUDIO_DIR, TEMP_DIR
 
+
 # ตั้งค่าระบบ (ใช้จาก config)
 RATE = audio_config.SAMPLE_RATE
 CHUNK = audio_config.CHUNK_SIZE  
@@ -50,30 +53,31 @@ SILENCE_DURATION = audio_config.SILENCE_DURATION
 MIN_RECORDING_DURATION = audio_config.MIN_RECORDING_DURATION
 MAX_RECORDING_DURATION = audio_config.MAX_RECORDING_DURATION
 
+# ฟังก์ชัน cache สำหรับโหลดโมเดล Whisper
+@st.cache_resource
+def get_whisper_model(model_size):
+    print(f"🧠 กำลังโหลดโมเดล Whisper ({model_size})...")
+    try:
+        model = whisper.load_model(model_size)
+        print("✅ โหลดโมเดล Whisper สำเร็จ")
+        return model
+    except Exception as e:
+        print(f"❌ ไม่สามารถโหลดโมเดล Whisper: {e}")
+        return None
+
 class WhisperSTT:
     """Enhanced Whisper Speech-to-Text Class"""
     
+
     def __init__(self, model_size: str = None):
         """
         Initialize Whisper STT
-        
         Args:
             model_size: ขนาดโมเดล (tiny, base, small, medium, large)
         """
         self.model_size = model_size or whisper_config.MODEL_SIZE
-        self.model = None
+        self.model = get_whisper_model(self.model_size)
         self.is_recording = False
-        self.load_model()
-    
-    def load_model(self):
-        """โหลดโมเดล Whisper"""
-        print(f"🧠 กำลังโหลดโมเดล Whisper ({self.model_size})...")
-        try:
-            self.model = whisper.load_model(self.model_size)
-            print("✅ โหลดโมเดล Whisper สำเร็จ")
-        except Exception as e:
-            print(f"❌ ไม่สามารถโหลดโมเดล Whisper: {e}")
-            self.model = None
     
     def is_ready(self) -> bool:
         """ตรวจสอบว่าพร้อมใช้งานหรือไม่"""

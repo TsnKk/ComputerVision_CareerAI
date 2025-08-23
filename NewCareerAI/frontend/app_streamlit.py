@@ -55,20 +55,53 @@ except ImportError:
 import google.generativeai as genai
 
 # เพิ่ม path สำหรับ modules
-sys.path.append(os.path.join(os.path.dirname(__file__), '..', 'modules'))
-sys.path.append(os.path.join(os.path.dirname(__file__), '..', 'core'))
+import importlib.util
+import sys
+from pathlib import Path
+
+def import_module_from_file(module_name, file_path):
+    try:
+        spec = importlib.util.spec_from_file_location(module_name, file_path)
+        if spec is None:
+            raise ImportError(f"Could not load spec for module {module_name} from {file_path}")
+        
+        module = importlib.util.module_from_spec(spec)
+        sys.modules[module_name] = module
+        spec.loader.exec_module(module)
+        return module
+    except Exception as e:
+        st.error(f"Error importing {module_name} from {file_path}: {e}")
+        return None
 
 # Import modules
 try:
-    from config import (
-        validate_config, print_config_status, 
-        GEMINI_API_KEY, GOOGLE_CREDENTIALS_PATH,
-        INTERVIEW_CONFIG, TTS_CONFIG
-    )
-    from TTSmodule import create_tts_client, text_to_speech, play_audio
-    from STTmodule import record_voice, transcribe_voice, test_microphone
+    parent_dir = Path(__file__).parent.parent
+    
+    config = import_module_from_file("config", str(parent_dir / "modules" / "config.py"))
+    TTSmodule = import_module_from_file("TTSmodule", str(parent_dir / "modules" / "TTSmodule.py"))
+    STTmodule = import_module_from_file("STTmodule", str(parent_dir / "modules" / "STTmodule.py"))
+    
+    # Get specific functions and variables
+    validate_config = config.validate_config
+    print_config_status = config.print_config_status
+    GEMINI_API_KEY = config.GEMINI_API_KEY
+    GOOGLE_CREDENTIALS_PATH = config.GOOGLE_CREDENTIALS_PATH
+    INTERVIEW_CONFIG = config.INTERVIEW_CONFIG
+    TTS_CONFIG = config.TTS_CONFIG
+    
+    # TTS functions
+    create_tts_client = TTSmodule.create_tts_client
+    text_to_speech = TTSmodule.text_to_speech
+    play_audio = TTSmodule.play_audio
+    
+    # STT functions
+    record_voice = STTmodule.record_voice
+    transcribe_voice = STTmodule.transcribe_voice
+    test_microphone = STTmodule.test_microphone
+    
 except ImportError as e:
     st.error(f"❌ ไม่สามารถโหลดโมดูลได้: {e}")
+    st.error(f"Module search paths: {sys.path}")
     st.stop()
 
 # ตั้งค่าหน้าเว็บ

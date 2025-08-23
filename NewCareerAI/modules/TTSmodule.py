@@ -28,6 +28,7 @@
 =====================================================
 """
 from google.cloud import texttospeech
+from google.cloud.texttospeech import TextToSpeechClient
 import os
 import pygame
 import time

@@ -147,7 +147,8 @@ class TTSConfig:
 
 class WhisperConfig:
     """การตั้งค่า Whisper STT"""
-    MODEL_SIZE = "base"  # tiny, base, small, medium, large
+    # ใช้ค่าจาก .env ถ้ามี หรือใช้ค่า default
+    MODEL_SIZE = os.getenv("WHISPER_MODEL_SIZE", "large")  # tiny, base, small, medium, large
     LANGUAGE = "th"
     TEMPERATURE = 0.0  # ความสม่ำเสมอในผลลัพธ์
     

@@ -17,7 +17,7 @@ def record_to_wav(path, seconds=DURATION_SEC, sr=SAMPLE_RATE):
     write(path, sr, audio_int16)
     print(f"✅ บันทึกไฟล์ที่: {path}")
 
-def transcribe_whisper(wav_path, model_name="small"):
+def transcribe_whisper(wav_path, model_name="large"):
     # model: tiny/base/small/medium/large  (ตัวใหญ่แม่นกว่าแต่ช้ากว่า)
     print("🧠 โหลดโมเดล Whisper:", model_name)
     model = whisper.load_model(model_name)

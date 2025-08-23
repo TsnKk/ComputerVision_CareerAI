@@ -49,7 +49,7 @@ print("="*50)
 # ตรวจสอบ Gemini API Key
 gemini_key = os.environ.get("GEMINI_API_KEY")
 print(f"🤖 Gemini API Key: {'✅ ตั้งค่าแล้ว' if gemini_key and gemini_key != 'your_actual_gemini_api_key_here' else '❌ ไม่ได้ตั้งค่าหรือใช้ค่าเริ่มต้น'}")
-if gemini_key and gemini_key != 'your_actual_gemini_api_key_here':
+if gemini_key and gemini_key != 'AIzaSyA7VkL0Oz9RwrRyXRtnan4matgkbANJkZI':
     print(f"   Key: {gemini_key[:10]}...{gemini_key[-5:] if len(gemini_key) > 15 else ''}")
 
 # ตรวจสอบ Google Cloud Credentials
