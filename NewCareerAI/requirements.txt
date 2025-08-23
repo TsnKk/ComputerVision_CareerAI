@@ -1,11 +1,36 @@
-# NewCareerAI - Advanced Interview System Requirements
-# ระบบสัมภาษณ์งานขั้นสูงด้วย AI
+# ============================================================
+# 📦 requirements.txt - NewCareerAI Python Dependencies
+# ============================================================
+# ฟีเจอร์หลัก:
+# - Complete dependency list สำหรับ Career AI system
+# - AI และ Machine Learning libraries
+# - Audio processing และ speech recognition
+# - Web interface และ UI frameworks
+# - Development และ deployment tools
+#
+# ความสามารถ:
+# - Google AI integration (Generative AI, Cloud TTS)
+# - Speech processing (Whisper STT, sounddevice)
+# - Web application framework (Streamlit)
+# - Audio playback และ processing (pygame, numpy)
+# - Environment management (python-dotenv)
+# - Legacy compatibility support
+#
+# การติดตั้ง: pip install -r requirements.txt
+# การอัพเดต: pip install -r requirements.txt --upgrade
+# ============================================================
 
-# === Core Dependencies ===
+# NewCareerAI - Enhanced Requirements (ปรับปรุงแล้ว)
+# ระบบสัมภาษณ์งานขั้นสูงด้วย AI และระบบผู้ช่วยเสียง
+
+# === Core Dependencies (NewCareerAI) ===
 google-generativeai>=0.3.0
 google-cloud-texttospeech>=2.14.0
 
-# === Audio Processing ===
+# === Environment Management ===
+python-dotenv>=1.0.0  # สำหรับ .env files
+
+# === Audio Processing (Enhanced) ===
 openai-whisper>=20231117
 sounddevice>=0.4.6
 numpy>=1.24.0
@@ -17,8 +42,24 @@ pygame>=2.5.0
 # === Web Interface ===
 streamlit>=1.28.0
 
+# === Enhanced Features ===
+pathlib  # built-in, สำหรับ Path management
+typing   # built-in, สำหรับ type hints
+
+# === Legacy Dependencies (Career AI) ===
+speech-recognition>=3.10.0
+# ollama # ติดตั้งแยก: https://ollama.ai
+
+# === Legacy Dependencies (Career) ===
+pyttsx3>=2.90  # สำหรับ TTS บน macOS/Windows
+
 # === Optional: Alternative Audio Playback ===
 # playsound==1.2.2
+
+# === Development & Testing ===
+# pytest>=7.0.0       # สำหรับ unit testing
+# black>=23.0.0        # code formatter
+# flake8>=6.0.0        # linter
 
 # === System Dependencies Notes ===
 # Windows ผู้ใช้อาจต้องติดตั้ง:
@@ -32,3 +73,7 @@ streamlit>=1.28.0
 # Linux ผู้ใช้อาจต้องติดตั้ง:
 # sudo apt-get install portaudio19-dev python3-pyaudio
 # pip install pyaudio
+
+# === การติดตั้งแบบครบถ้วน ===
+# pip install -r requirements.txt
+# หรือ pip install --upgrade -r requirements.txt

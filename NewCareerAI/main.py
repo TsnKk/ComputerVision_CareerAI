@@ -1,6 +1,29 @@
+#!/usr/bin/env python3
 """
-main.py - NewCareerAI Main Launcher
-จุดเริ่มต้นหลักของระบบ NewCareerAI
+🚀 main.py - NewCareerAI Core Application Launcher  
+==================================================
+ฟีเจอร์หลัก:
+- Primary entry point สำหรับ NewCareerAI system
+- Module path management และ system initialization
+- Alternative launcher สำหรับ console-based interface
+- Development และ testing entry point
+
+ความสามารถ:
+- System path configuration และ module loading
+- Console-based interview system launch
+- Development environment setup
+- Command-line interface สำหรับ advanced users
+- Integration testing และ debugging utilities
+
+ส่วนประกอบหลัก:
+- Module path initialization
+- Core system bootstrapping  
+- Development tools และ utilities
+- Legacy compatibility functions
+
+การใช้งาน: python main.py
+Note: สำหรับ web interface ให้ใช้ run_streamlit.py แทน
+==================================================
 """
 import os
 import sys

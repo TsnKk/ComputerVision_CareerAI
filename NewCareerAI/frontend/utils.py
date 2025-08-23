@@ -1,5 +1,30 @@
+#!/usr/bin/env python3
 """
-utils.py - ฟังก์ชันช่วยเหลือสำหรับ Streamlit App
+🛠️ utils.py - Streamlit Application Utilities
+==============================================
+ฟีเจอร์หลัก:
+- Streamlit helper functions และ UI components
+- System information display utilities
+- File management และ temporary file handling
+- Audio file processing helpers
+- UI state management functions
+
+ความสามารถ:
+- System info display (Python version, dependencies)
+- Audio file validation และ format checking
+- Temporary file creation และ cleanup
+- Streamlit session state management
+- Error handling และ user notification helpers
+- File download และ upload utilities
+
+Helper Functions:
+- show_system_info(): แสดงข้อมูลระบบ
+- create_temp_file(): สร้างไฟล์ชั่วคราว
+- validate_audio(): ตรวจสอบไฟล์เสียง
+- format_duration(): จัดรูปแบบเวลา
+
+การใช้งาน: from frontend.utils import show_system_info
+==============================================
 """
 
 import streamlit as st

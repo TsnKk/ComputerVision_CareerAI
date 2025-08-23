@@ -1,6 +1,29 @@
+#!/usr/bin/env python3
 """
-NewCareerAI - Advanced Interview System
-ระบบสัมภาษณ์งานขั้นสูงด้วย AI
+💼 interview_system.py - Core Interview Processing Engine
+==========================================================
+ฟีเจอร์หลัก:
+- AI-powered interview question generation ด้วย Google Gemini
+- Integration ระหว่าง TTS และ STT modules
+- Complete interview workflow management
+- Job description analysis และการสร้างคำถามที่เหมาะสม
+- Interview session management และ tracking
+
+ความสามารถ:
+- Generate contextual interview questions
+- Process job descriptions และสร้างคำถามตาม requirements
+- Manage interview flow และ user responses
+- Integration กับ voice recording และ playback systems
+- Handle multiple interview rounds และ follow-up questions
+
+ฟีเจอร์ AI:
+- Google Generative AI (Gemini) สำหรับสร้างคำถาม
+- Context-aware question generation
+- Job-specific interview scenarios
+- Intelligent follow-up question suggestions
+
+การใช้งาน: python -m core.interview_system
+==========================================================
 """
 import os
 import sys

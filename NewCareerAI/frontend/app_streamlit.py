@@ -1,6 +1,34 @@
+#!/usr/bin/env python3
 """
-app_streamlit.py - AI Coach for Interview Frontend
-ระบบฝึกสัมภาษณ์งานด้วย AI - Streamlit Interface
+🎯 app_streamlit.py - AI Interview Coach Web Application
+=======================================================
+ฟีเจอร์หลัก:
+- AI-powered interview question generation (Gemini AI)
+- Real-time voice recording and transcription (Whisper STT)
+- Text-to-speech response synthesis (Google TTS)
+- Interactive job description analysis
+- Complete interview simulation workflow
+- Audio file management and playback
+
+ความสามารถ:
+- Multi-stage interview question generation
+- Voice recording with silence detection
+- Real-time audio transcription
+- Job requirements analysis
+- Interview performance tracking
+- Audio file download and management
+- Responsive web interface with Streamlit
+
+เทคโนโลยี:
+- Streamlit (Web Framework)
+- Google Generative AI (Question Generation)
+- OpenAI Whisper (Speech-to-Text)
+- Google Cloud TTS (Text-to-Speech)
+- pygame (Audio Playback)
+- sounddevice (Audio Recording)
+
+URL: http://localhost:8501
+=======================================================
 """
 
 import streamlit as st
@@ -9,6 +37,21 @@ import sys
 import time
 import threading
 from io import BytesIO
+from pathlib import Path
+
+# โหลด environment variables จากไฟล์ .env
+try:
+    from dotenv import load_dotenv
+    # หา path ของไฟล์ .env
+    env_path = Path(__file__).parent.parent / '.env'
+    if env_path.exists():
+        load_dotenv(env_path)
+        print(f"✅ โหลดการตั้งค่าจาก {env_path}")
+    else:
+        print(f"⚠️  ไม่พบไฟล์ .env ที่ {env_path}")
+except ImportError:
+    print("⚠️  python-dotenv ไม่ได้ติดตั้ง กำลังใช้ system environment variables")
+
 import google.generativeai as genai
 
 # เพิ่ม path สำหรับ modules

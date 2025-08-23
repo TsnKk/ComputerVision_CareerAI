@@ -1,3 +1,32 @@
+#!/usr/bin/env python3
+"""
+🎤 stt_module_old.py - Legacy Speech-to-Text Module  
+====================================================
+ฟีเจอร์หลัก:
+- Speech Recognition library-based STT
+- Simple microphone input handling
+- Basic voice recognition functionality
+- Google Speech Recognition API integration
+
+ความสามารถ:
+- SpeechToText class สำหรับ basic voice recognition
+- Real-time microphone input
+- Ambient noise adjustment
+- Google Speech API integration
+- Simple timeout และ phrase limit handling
+
+Limitations:
+- Requires internet connection
+- Limited to Google Speech API
+- Basic functionality only
+- No advanced features
+
+Status: DEPRECATED - ใช้ STTmodule.py (Whisper) แทนสำหรับ production
+Purpose: Legacy compatibility และ simple testing only
+การใช้งาน: from modules.stt_module_old import SpeechToText
+====================================================
+"""
+
 import speech_recognition as sr
 
 class SpeechToText:

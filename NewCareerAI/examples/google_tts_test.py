@@ -1,6 +1,29 @@
+#!/usr/bin/env python3
 """
-Google TTS Test - ทดสอบระบบ Google Cloud Text-to-Speech
-ใช้ pygame แทน playsound เพื่อความสอดคล้องกับ TTSmodule
+🧪 google_tts_test.py - Google Cloud TTS Testing Example
+========================================================
+ฟีเจอร์หลัก:
+- Google Cloud Text-to-Speech API testing และ validation
+- TTSmodule integration example
+- Voice quality และ performance testing
+- pygame audio playback demonstration
+
+ความสามารถ:
+- TTS client creation และ configuration testing
+- Text-to-speech synthesis with different voices
+- Audio playback testing ด้วย pygame integration
+- Error handling และ troubleshooting examples
+- Voice parameter testing (rate, pitch, volume)
+
+การทดสอบ:
+- API authentication และ credentials verification
+- Thai voice synthesis (Wavenet, Neural2)
+- Audio file generation และ playback
+- Performance และ quality assessment
+
+การใช้งาน: python examples/google_tts_test.py
+Purpose: Development testing และ TTS module validation
+========================================================
 """
 import os
 import sys

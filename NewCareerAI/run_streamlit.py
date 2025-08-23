@@ -1,6 +1,23 @@
+#!/usr/bin/env python3
 """
-run_streamlit.py - Launcher สำหรับ Streamlit App
-รันคำสั่งนี้เพื่อเปิด AI Coach for Interview
+🚀 run_streamlit.py - Streamlit Application Launcher
+===============================================
+ฟีเจอร์หลัก:
+- เปิดตัวแอพ AI Interview Coach ผ่าน Streamlit
+- ตรวจสอบความพร้อมของระบบก่อนเปิดตัว
+- จัดการเส้นทางไฟล์และการตั้งค่าอัตโนมัติ
+- แสดงข้อความแนะนำและ URL สำหรับการเข้าถึง
+
+ความสามารถ:
+- Auto-launch Streamlit web server
+- Built-in error handling and status messages
+- Automatic browser opening (configurable)
+- Cross-platform compatibility
+- Graceful shutdown with Ctrl+C
+
+การใช้งาน: python run_streamlit.py
+URL: http://localhost:8501
+===============================================
 """
 
 import os

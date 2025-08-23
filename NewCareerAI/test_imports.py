@@ -1,5 +1,29 @@
+#!/usr/bin/env python3
 """
-test_imports.py - ทดสอบการ import ทั้งหมด
+🧪 test_imports.py - Module Import Testing Suite
+================================================
+ฟีเจอร์หลัก:
+- Comprehensive import testing สำหรับทุก modules
+- Dependency validation และ compatibility checking
+- Development environment verification
+- Module functionality testing
+
+ความสามารถ:
+- test_modules(): ทดสอบการ import ทั้งหมด
+- Core modules testing (config, STT, TTS, AI)
+- External dependencies verification
+- Error detection และ troubleshooting guidance
+- Import path และ compatibility validation
+
+การทดสอบ:
+- All core modules (config, STT, TTS, interview_system)
+- External libraries (streamlit, whisper, pygame, etc.)
+- API connections และ credentials
+- System compatibility และ requirements
+
+การใช้งาน: python test_imports.py
+Purpose: Development testing และ environment validation
+================================================
 """
 
 def test_modules():
