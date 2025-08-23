@@ -1,0 +1,9 @@
+รายการสิ่งที่จำเป็นสำหรับระบบ Career AI
+
+สิ่งที่ต้องเตรียม:
+1. Google Gemini API Key - สำหรับใช้งาน AI ในการสร้างคำถามและคำตอบ
+2. Google Cloud TTS Service Account Key - สำหรับใช้งานโมเดลแปลงข้อความเป็นเสียง (Text-to-Speech)
+
+หมายเหตุ:
+- API Keys เหล่านี้จำเป็นต้องตั้งค่าใน .env file ก่อนใช้งาน
+- Service Account Key ต้องเป็นไฟล์ JSON ที่ดาวน์โหลดจาก Google Cloud Console
